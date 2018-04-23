@@ -1,8 +1,8 @@
 import React from 'react';
 
-function UserInput() {
+function UserInput(props) {
     return (<div>
-        <input type='text'/>
+        <input type='text' onChange={props.change}/>
     </div>)
 }
 
