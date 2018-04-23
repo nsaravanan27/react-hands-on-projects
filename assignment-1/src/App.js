@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Assignment 1</h1>
-        <UserInput change={this.changeHandler}/>
+        <UserInput name={this.state.username} change={this.changeHandler}/>
         <UserOutput name={this.state.username}/>
         <UserOutput name="mac"/>
       </div>
