@@ -1,3 +1,5 @@
+import React from 'react';
+
 function UserOutput() {
     return (<div>
         <p>paragraph 1</p>
