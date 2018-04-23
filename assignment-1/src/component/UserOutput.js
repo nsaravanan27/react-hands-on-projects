@@ -1,8 +1,8 @@
 import React from 'react';
 
-function UserOutput() {
+function UserOutput(props) {
     return (<div>
-        <p>paragraph 1</p>
+        <p>Welcome to react app {props.name}</p>
         <p>paragraph 2</p>
     </div>);
 }
