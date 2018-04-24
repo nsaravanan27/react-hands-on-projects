@@ -1,3 +1,5 @@
 .App {
-  margin: 16px;
+  padding: 10px;
+  border: 2px solid #eee;
+  margin: auto;
 }
