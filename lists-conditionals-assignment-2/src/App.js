@@ -6,16 +6,14 @@ import CharComponent from './component/CharComponent';
 class App extends Component {
   
   state = {
-    value: '',
-    length : 0
+    value: ''
   }
 
   changeHandler = (event) => {
     const val = event.target.value;
 
     this.setState({
-        value : val,
-        length : val.length
+        value : val
     });
   }
 
@@ -36,8 +34,8 @@ class App extends Component {
     return (
       <div className="App">
         <input type="text" onChange={this.changeHandler} value={this.state.value}/>
-        <p>Length of the input string : {this.state.length}</p>
-        <ValidationComponent length={this.state.length}/>
+        <p>Length of the input string : {this.state.value.length}</p>
+        <ValidationComponent length={this.state.value.length}/>
         <div>
           {charComponent}
         </div>
