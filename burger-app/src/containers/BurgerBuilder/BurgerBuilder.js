@@ -31,6 +31,12 @@ class BurgerBuilder extends Component {
     });
   }
 
+  purchaseNowHideHandler = () => {
+      this.setState({
+        purchaseNow: false
+      });
+  }
+
   orderNowHandler = (ingredients) => {
       const sum = Object.keys(ingredients).map(key => ingredients[key]).reduce((sum, ele) => sum+ele,0);
       this.setState({
@@ -86,7 +92,7 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={this.state.purchaseNow}>
+        <Modal show={this.state.purchaseNow} hide={this.purchaseNowHideHandler}>
           <OrderSummary ingredients={this.state.ingredients}/>
         </Modal>
         <Burger
