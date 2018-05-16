@@ -6,7 +6,6 @@ const burger = props => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map(key => {
       return [...Array(props.ingredients[key])].map((_, i) => {
-        console.log(key + i);
         return <BurgerIngredient key={key + i} type={key} />;
       });
     })
@@ -21,6 +20,7 @@ const burger = props => {
       <BurgerIngredient type="bread-top" />
       {transformedIngredients}
       <BurgerIngredient type="bread-bottom" />
+      <div> Price : {props.totalPrice} </div>
     </div>
   );
 };
