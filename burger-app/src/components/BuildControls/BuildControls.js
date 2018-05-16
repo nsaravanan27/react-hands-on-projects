@@ -19,7 +19,13 @@ const buildControls = props => {
       disableIng = {props.disabled[dict.type]}
     />
   ));
-  return <div className={classes.BuildControls}>{buildIngredientsList}</div>;
+  return <div className={classes.BuildControls}>
+      <p>
+        Price : <strong>{props.totalPrice.toFixed(2)}</strong>
+      </p>
+      {buildIngredientsList}
+      <button className={classes.OrderButton} disabled={!props.orderBtnStatus}>ORDER HISTORY</button>
+    </div>;
 };
 
 export default buildControls;
