@@ -24,7 +24,11 @@ const buildControls = props => {
         Price : <strong>{props.totalPrice.toFixed(2)}</strong>
       </p>
       {buildIngredientsList}
-      <button className={classes.OrderButton} disabled={!props.orderBtnStatus}>ORDER HISTORY</button>
+      <button className={classes.OrderButton} 
+              disabled={!props.orderBtnStatus}
+              onClick={props.purchaseNow}>
+        ORDER HISTORY
+      </button>
     </div>;
 };
 
