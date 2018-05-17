@@ -37,6 +37,10 @@ class BurgerBuilder extends Component {
       });
   }
 
+  purchaseContinueHandler = () => {
+      alert("Order confirmed...");
+  }
+
   orderNowHandler = (ingredients) => {
       const sum = Object.keys(ingredients).map(key => ingredients[key]).reduce((sum, ele) => sum+ele,0);
       this.setState({
@@ -90,23 +94,16 @@ class BurgerBuilder extends Component {
       disabledIngredients[key] = disabledIngredients[key] <= 0;
     }
 
-    return (
-      <Aux>
+    return <Aux>
         <Modal show={this.state.purchaseNow} hide={this.purchaseNowHideHandler}>
-          <OrderSummary ingredients={this.state.ingredients}/>
+          <OrderSummary onCancel={this.purchaseNowHideHandler} 
+          onSuccess={this.purchaseContinueHandler} 
+          ingredients={this.state.ingredients} 
+          totalPrice={this.state.totalPrice}/>
         </Modal>
-        <Burger
-          ingredients={this.state.ingredients}
-        />
-        <BuildControls
-          addIngredients={this.addIngredientsHandler}
-          removeIngredients={this.removeIngredientsHandler}
-          disabled={disabledIngredients} totalPrice={this.state.totalPrice} 
-          orderBtnStatus={this.state.isPurchasable}
-          purchaseNow={() => this.purchaseNowHandler()}
-        />
-      </Aux>
-    );
+        <Burger ingredients={this.state.ingredients} />
+        <BuildControls addIngredients={this.addIngredientsHandler} removeIngredients={this.removeIngredientsHandler} disabled={disabledIngredients} totalPrice={this.state.totalPrice} orderBtnStatus={this.state.isPurchasable} purchaseNow={() => this.purchaseNowHandler()} />
+      </Aux>;
   }
 }
 
