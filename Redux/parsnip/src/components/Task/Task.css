@@ -1,0 +1,25 @@
+.task {
+    width: 200px;
+    height: 100px;
+    margin: 2px;
+    border-color: black;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.task-title {
+    display: flex;
+    background-color: aqua;
+    border-radius: 5px;
+}
+
+.task-status {
+    align-items: flex-end;
+    padding-left: 5%;
+}
+
+.task-desc {
+    background-color: burlywood;
+    border-radius: 5px;
+}
